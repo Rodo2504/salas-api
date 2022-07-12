@@ -19,7 +19,7 @@ app.use(reservasRoutes);
 
 //base de datos
 const conn = require('./src/conexion');
-
+/*
 conn.connect((err, res)=>{
     if(err){
         console.log(err);
@@ -29,6 +29,7 @@ conn.connect((err, res)=>{
         console.log("Conexion a base de datos");
     }
 });
+*/
 
 app.get('/', (req, res)=>{
     res.send('Servidor iniciado');
