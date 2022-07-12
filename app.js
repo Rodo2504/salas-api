@@ -4,7 +4,7 @@ const app           = express();
 const cors          = require('cors');
 
 // settings
-var port = process.env.PORT || 2020
+const port = process.env.PORT || 3000;
 
 // middlewares
 app.use(express.json());
