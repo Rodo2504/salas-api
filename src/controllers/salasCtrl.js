@@ -1,4 +1,5 @@
-const conn = require('../conexion');
+//const conn = require('../conexion');
+import conn from '../conexion';
 
 const controlador = {
     getSalas: (callback) =>{

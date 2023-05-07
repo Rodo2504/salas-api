@@ -1,6 +1,8 @@
-const express   = require('express');
+//const express   = require('express');
+import express from 'express';
 const router    = express.Router();
-const salasCtrl = require('../controllers/salasCtrl');
+//const salasCtrl = require('../controllers/salasCtrl');
+import salasCtrl from '../controllers/salasCtrl.js';
 
 router.get('/salas', (req, res)=>{
     salasCtrl.getSalas((data)=>{

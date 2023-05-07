@@ -13,8 +13,10 @@ app.use(express.json());
 app.use(cors());
 
 //routes
-const salasRoutes       = require('./src/routes/salasRoutes');
-const reservasRoutes    = require('./src/routes/reservasRoutes');
+//const salasRoutes       = require('./src/routes/salasRoutes');
+import salasRoutes from './src/routes/salasRoutes.js';
+//const reservasRoutes    = require('./src/routes/reservasRoutes');
+import reservasRoutes from './src/routes/reservasRoutes.js';
 
 app.use(salasRoutes);
 app.use(reservasRoutes);

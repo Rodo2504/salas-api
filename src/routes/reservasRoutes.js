@@ -1,6 +1,8 @@
-const express       = require('express');
+//const express       = require('express');
+import express from 'express';
 const router        = express.Router();
-const reservasCtrl  = require('../controllers/reservasCtrl');
+//const reservasCtrl  = require('../controllers/reservasCtrl');
+import reservasCtrl from '../controllers/reservasCtrl.js';
 
 router.get('/reservas', (req, res)=>{
     reservasCtrl.getReservas(data=>{
