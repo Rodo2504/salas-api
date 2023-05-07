@@ -2,7 +2,7 @@ const conn = require('../conexion');
 
 const controlador = {
     getSalas: (callback) =>{
-        conn.query('Select * From Salas;', (err, data)=>{
+        conn.query('Select * From salas;', (err, data)=>{
             if(err){
                 callback(err);
             }
@@ -10,7 +10,7 @@ const controlador = {
         });
     },
     getSala: (body, callback) =>{
-        conn.query('SELECT * FROM Salas WHERE Nombre = ?;', [body.Nombre], (err, data)=>{
+        conn.query('SELECT * FROM salas WHERE Nombre = ?;', [body.Nombre], (err, data)=>{
             if(err){
                 callback(err);
             }
@@ -18,7 +18,7 @@ const controlador = {
         });
     },
     setSala: (body, callback)=>{
-        conn.query('Insert INTO Salas (Nombre, Capacidad, Estado) VALUES (?,?,?);', [body.Nombre, body.Capacidad, body.Estado], (err, data) => {
+        conn.query('Insert INTO salas (Nombre, Capacidad, Estado) VALUES (?,?,?);', [body.Nombre, body.Capacidad, body.Estado], (err, data) => {
             if (err) {
                 callback(err);
             }
@@ -26,7 +26,7 @@ const controlador = {
         });
     },
     deleteSala: (id, callback)=>{
-        conn.query('DELETE FROM Salas WHERE Id = ?;', [id], (err, data) => {
+        conn.query('DELETE FROM salas WHERE Id = ?;', [id], (err, data) => {
             if (err) {
                 callback(err);
             }
@@ -42,7 +42,7 @@ const controlador = {
         });
     },
     updateStatus: (id, body, callback) => {
-        conn.query('UPDATE Salas SET Estado = ? WHERE Id = ?;', [body.Estado, id], (err, results) => {
+        conn.query('UPDATE salas SET Estado = ? WHERE Id = ?;', [body.Estado, id], (err, results) => {
             if (err) {
                 callback(err);
             }

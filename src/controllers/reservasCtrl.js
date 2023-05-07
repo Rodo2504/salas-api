@@ -10,7 +10,7 @@ const controlador = {
         });
     },
     setReserva: (body, callback) =>{
-        conn.query('Insert INTO Reservas (Sala, Encargado, Hra_ini, Hra_fin, Estado) VALUES (?,?,?,?,?);', 
+        conn.query('Insert INTO reservas (Sala, Encargado, Hra_ini, Hra_fin, Estado) VALUES (?,?,?,?,?);', 
             [body.Sala, body.Encargado, body.Hra_ini, body.Hra_fin, body.Estado], (err, data) => {
             if (err) {
                 callback(err);
@@ -19,7 +19,7 @@ const controlador = {
         });
     },
     getReservasSala: (sala, callback) =>{
-        conn.query('Select * From Reservas WHERE Sala = ? ORDER BY time(Hra_ini);', [sala], (err, data)=>{
+        conn.query('Select * From reservas WHERE Sala = ? ORDER BY time(Hra_ini);', [sala], (err, data)=>{
             if(err){
                 callback(err); 
             }
@@ -35,7 +35,7 @@ const controlador = {
         });
     },
     updateStatus: (id, body, callback) =>{
-        conn.query('UPDATE Reservas SET Estado = ? WHERE Id = ?;', [body.Estado, id], (err, results) => {
+        conn.query('UPDATE reservas SET Estado = ? WHERE Id = ?;', [body.Estado, id], (err, results) => {
             if (err) {
                 callback(err);
             }
