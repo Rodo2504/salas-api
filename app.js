@@ -3,7 +3,9 @@ const express       = require('express');
 const app           = express();
 const cors          = require('cors');
 
-import { PORT } from './src/config.js';
+const PORT          = require('./src/config');
+
+//import { PORT } from './src/config';
 
 // middlewares
 app.use(express.json());
