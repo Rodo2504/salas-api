@@ -1,13 +1,13 @@
-//const mysql = require('mysql');
-import mysql from 'mysql';
-import { DB_HOST, DB_USER, DB_NAME, DB_PASSWORD, DB_PORT } from './config';
+const mysql     = require('mysql');
+const settings  = require('./config');
+//import { DB_HOST, DB_USER, DB_NAME, DB_PASSWORD, DB_PORT } from './config';
 
 module.exports = mysql.createPool({
-    host: DB_HOST,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    port: DB_PORT,
-    database: DB_NAME
+    host: settings.DB_HOST,
+    user: settings.DB_USER,
+    password: settings.DB_PASSWORD,
+    port: settings.DB_PORT,
+    database: settings.DB_NAME
 }); 
 
 /*

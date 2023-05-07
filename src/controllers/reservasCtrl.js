@@ -1,5 +1,4 @@
-//const conn = require('../conexion');
-import conn from '../conexion';
+const conn = require('../conexion');
 
 const controlador = {
     getReservas: (callback) =>{

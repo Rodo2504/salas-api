@@ -1,22 +1,17 @@
-import express from 'express';
-//const express       = require('express');
+const express       = require('express');
 //const bodyParser    = require('body-parser');
 const app           = express();
-import cors from 'cors';
-//const cors          = require('cors');
+const cors          = require('cors');
 
-
-import { PORT } from './src/config.js';
+const settings      = require('./src/config');
 
 // middlewares
 app.use(express.json());
 app.use(cors());
 
 //routes
-//const salasRoutes       = require('./src/routes/salasRoutes');
-import salasRoutes from './src/routes/salasRoutes.js';
-//const reservasRoutes    = require('./src/routes/reservasRoutes');
-import reservasRoutes from './src/routes/reservasRoutes.js';
+const salasRoutes       = require('./src/routes/salasRoutes');
+const reservasRoutes    = require('./src/routes/reservasRoutes');
 
 app.use(salasRoutes);
 app.use(reservasRoutes);
@@ -37,4 +32,4 @@ conn.connect((err, res)=>{
 
 app.get('/', (req, res)=>{
     res.send('Servidor iniciado');
-}).listen(PORT,()=>{console.log("Servidor en puerto ", PORT)});
+}).listen(settings.PORT,()=>{console.log("Servidor en puerto ", settings.PORT)});
