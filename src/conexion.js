@@ -1,4 +1,5 @@
-const mysql = require('mysql');
+//const mysql = require('mysql');
+import mysql from 'mysql';
 import { DB_HOST, DB_USER, DB_NAME, DB_PASSWORD, DB_PORT } from './config';
 
 module.exports = mysql.createPool({

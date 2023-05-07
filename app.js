@@ -1,11 +1,12 @@
-const express       = require('express');
+import express from 'express';
+//const express       = require('express');
 //const bodyParser    = require('body-parser');
 const app           = express();
-const cors          = require('cors');
+import cors from 'cors';
+//const cors          = require('cors');
 
-const PORT          = require('./src/config');
 
-//import { PORT } from './src/config';
+import { PORT } from './src/config.js';
 
 // middlewares
 app.use(express.json());
