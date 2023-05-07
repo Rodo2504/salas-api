@@ -3,8 +3,7 @@ const express       = require('express');
 const app           = express();
 const cors          = require('cors');
 
-// settings
-const port = process.env.PORT || 3000;
+import { PORT } from './src/config.js';
 
 // middlewares
 app.use(express.json());
@@ -33,4 +32,4 @@ conn.connect((err, res)=>{
 
 app.get('/', (req, res)=>{
     res.send('Servidor iniciado');
-}).listen(port,()=>{console.log("Servidor en puerto ", port)});
+}).listen(PORT,()=>{console.log("Servidor en puerto ", PORT)});
